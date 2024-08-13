@@ -1,0 +1,31 @@
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+
+    sourceCompatibility = 17
+    targetCompatibility = 17
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
