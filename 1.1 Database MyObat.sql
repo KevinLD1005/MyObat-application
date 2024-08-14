@@ -1,31 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jun 21, 2024 at 12:43 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `myobat`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `daftar_obat`
---
 
 CREATE TABLE `daftar_obat` (
   `obat_id` int(11) NOT NULL,
@@ -34,10 +6,6 @@ CREATE TABLE `daftar_obat` (
   `harga` int(11) DEFAULT NULL,
   `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `daftar_obat`
---
 
 INSERT INTO `daftar_obat` (`obat_id`, `obat_nama`, `kategori_id`, `harga`, `description`) VALUES
 (1, 'Panadol', 1, 15000, 'Panadol adalah obat yang mengandung parasetamol (asetaminofen). Parasetamol bekerja meredakan rasa sakit dan menurunkan demam. Digunakan untuk sakit kepala, sakit gigi, nyeri otot, dan demam.'),
@@ -91,12 +59,6 @@ INSERT INTO `daftar_obat` (`obat_id`, `obat_nama`, `kategori_id`, `harga`, `desc
 (49, 'Prerdnison', 20, 2600, 'Obat generik kortikosteroid sintetis. Obat ini digunakan terapi insufisiensi adrenokortikal, untuk memperoleh efek antiinflamasi atau imunosupresan.'),
 (50, 'Lukajel Antiseptic Wound Gel', 17, 25500, 'Obat topikal antiseptik dengan basis gel bening yang efektif untuk mencegah infeksi pada beragam jenis luka pada kulit seperti Luka Bakar, Luka Potong, Lecet, dan Luka Sunat.');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `failed_jobs`
---
-
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uuid` varchar(255) NOT NULL,
@@ -107,21 +69,11 @@ CREATE TABLE `failed_jobs` (
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `kategori_obat`
---
-
 CREATE TABLE `kategori_obat` (
   `kategori_id` int(11) NOT NULL,
   `kategori_nama` varchar(50) NOT NULL,
   `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `kategori_obat`
---
 
 INSERT INTO `kategori_obat` (`kategori_id`, `kategori_nama`, `description`) VALUES
 (1, 'Demam', 'Anti demam berperan menurunkan kondisi demam, yaitu peningkatan suhu tubuh yang cukup signifikan hingga mencapai 38 derajat Celsius atau lebih sebagai bentuk respon imun tubuh melawan infeksi virus, bakteri, jamur atau parasit penyebab penyakit.'),
@@ -145,21 +97,11 @@ INSERT INTO `kategori_obat` (`kategori_id`, `kategori_nama`, `description`) VALU
 (19, 'Iritasi mata', 'Obat yang digunakan untuk meredakan peradangan/iritasi pada mata yang bergejala merah, gatal, dan berair. Penyebabnya termasuk alergi, infeksi, atau kontak dengan bahan iritan.'),
 (20, 'Kortikosteroid', 'Obat yang digunakan untuk meredakan peradangan dan menekan sistem kekebalan tubuh dengan meniru efek hormon kortisol yang diproduksi oleh kelenjar adrenal. Tujuannya untuk mengobati berbagai kondisi inflamasi dan autoimun, seperti eksim, psoriasis, dermatitis kontak.');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2014_10_12_000000_create_users_table', 1),
@@ -167,23 +109,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2019_08_19_000000_create_failed_jobs_table', 1),
 (8, '2019_12_14_000001_create_personal_access_tokens_table', 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `password_resets`
---
-
 CREATE TABLE `password_resets` (
   `email` varchar(255) NOT NULL,
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `personal_access_tokens`
---
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
@@ -197,10 +127,6 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `personal_access_tokens`
---
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `expires_at`, `last_used_at`, `created_at`, `updated_at`) VALUES
 (2, 'App\\Models\\User', 1, 'android', 'b122bfd7930765231dfadcedf4657f52c9ab203fcad5a4e0eac3a348b58fd046', '[\"*\"]', NULL, NULL, '2024-05-19 21:47:28', '2024-05-19 21:47:28'),
@@ -233,21 +159,11 @@ INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `n
 (29, 'App\\Models\\User', 1, 'mobile', '9e0f27b180aa16ba3bec6a10e941699348ac0e0955c46e62d86bc1effe65d123', '[\"*\"]', NULL, NULL, '2024-06-05 02:11:58', '2024-06-05 02:11:58'),
 (30, 'App\\Models\\User', 1, 'mobile', 'c42aed724573581328527cdd965116883ce642259c27b988c3baeb86d9a05697', '[\"*\"]', NULL, NULL, '2024-06-20 20:08:12', '2024-06-20 20:08:12');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `preferences`
---
-
 CREATE TABLE `preferences` (
   `preference_id` int(11) NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `obat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `preferences`
---
 
 INSERT INTO `preferences` (`preference_id`, `user_id`, `obat_id`) VALUES
 (1, 1, 1),
@@ -271,12 +187,6 @@ INSERT INTO `preferences` (`preference_id`, `user_id`, `obat_id`) VALUES
 (26, 4, 4),
 (27, 4, 5);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -288,10 +198,6 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `users`
---
-
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Kevin Leo', 'kevinld1005@gmail.com', NULL, '$2y$10$efk/lKrUYcOHJy4puWq.deAMOLpz0p.PfKHGDTAqu2vWV2jhXOA06', NULL, '2024-04-30 00:11:52', '2024-05-07 19:02:48'),
 (2, 'Bi Gwang', 'BigWang123@gmail.com', NULL, '$2y$10$7vEOnlPCmikNIpXrtVk94O6Y.F0uqfwj2jJSCRthSLmdzf1Kt1qVu', NULL, '2024-04-30 00:15:59', '2024-04-30 00:15:59'),
@@ -301,129 +207,63 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (6, 'error email test', 'erroremail@yahoo.com', NULL, '$2y$10$w2ugpYYaYe1XBeJ/jipAHOEvQwqRdOppMqadpSdcd8uUd8LIsvJAu', NULL, '2024-05-20 21:16:26', '2024-05-20 21:16:26'),
 (7, 'Krun Thaep', 'krunthaep@mail.com', NULL, '$2y$10$5BhsTWgCGUc/VVg1GXvxzu0u/eljUemoFgcOKQKGtDlGGUkBYWQIi', NULL, '2024-06-05 00:23:21', '2024-06-05 00:23:21');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `daftar_obat`
---
 ALTER TABLE `daftar_obat`
   ADD PRIMARY KEY (`obat_id`),
   ADD KEY `kategori_id` (`kategori_id`);
 
---
--- Indexes for table `failed_jobs`
---
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
---
--- Indexes for table `kategori_obat`
---
 ALTER TABLE `kategori_obat`
   ADD PRIMARY KEY (`kategori_id`);
 
---
--- Indexes for table `migrations`
---
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `password_resets`
---
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
---
--- Indexes for table `personal_access_tokens`
---
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
---
--- Indexes for table `preferences`
---
 ALTER TABLE `preferences`
   ADD PRIMARY KEY (`preference_id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `obat_id` (`obat_id`);
 
---
--- Indexes for table `users`
---
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `daftar_obat`
---
 ALTER TABLE `daftar_obat`
   MODIFY `obat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
---
--- AUTO_INCREMENT for table `failed_jobs`
---
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT for table `kategori_obat`
---
 ALTER TABLE `kategori_obat`
   MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
---
--- AUTO_INCREMENT for table `migrations`
---
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
---
--- AUTO_INCREMENT for table `personal_access_tokens`
---
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
---
--- AUTO_INCREMENT for table `preferences`
---
 ALTER TABLE `preferences`
   MODIFY `preference_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
---
--- AUTO_INCREMENT for table `users`
---
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `daftar_obat`
---
 ALTER TABLE `daftar_obat`
   ADD CONSTRAINT `daftar_obat_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori_obat` (`kategori_id`);
 
---
--- Constraints for table `preferences`
---
 ALTER TABLE `preferences`
   ADD CONSTRAINT `preferences_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `preferences_ibfk_2` FOREIGN KEY (`obat_id`) REFERENCES `daftar_obat` (`obat_id`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
