@@ -1,7 +1,4 @@
-// import 'dart:developer';
 
-// import 'package:dio/dio.dart' as api;
-// import 'package:myobat_application/services/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:myobat_application/components/my_button.dart';
 import 'package:myobat_application/components/my_textfield.dart';
@@ -11,9 +8,7 @@ import 'package:myobat_application/services/auth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:myobat_application/theme/theme_provider.dart';
-// import 'package:provider/provider.dart';
 
-// import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;
