@@ -79,18 +79,6 @@ class AuthController extends Controller
         ]);
     }
 
-    // public function register_new(Request $request) {
-    //     try {
-    //         $credentials = $request->validated();
-    //         $user = User::create($credentials);
-    //         $user['access_token'] = $user->createToken('access_token')->plainTextToken;
-
-    //         return Helpers::returnOkResponse('Account Created', $user);
-    //     } catch (\Throwable $th) {
-    //         return Helpers::throwInternalError($th);
-    //     }
-    // }
-
     public function user(Request $request)
     {
         $user_id = $request->user()->email;
